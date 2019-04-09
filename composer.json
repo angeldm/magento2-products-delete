@@ -1,0 +1,25 @@
+{
+    "name": "angeldm/magento2-products-delete",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        }
+    ],
+    "require": {	
+        "php": "~7.1.3||~7.2.0",
+	"magento/framework": "102.0.*",
+	 "magento/module-catalog": "103.0.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Angeldm\\ProductsDelete\\": ""
+        }
+    }
+}
