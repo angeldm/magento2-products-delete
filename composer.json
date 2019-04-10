@@ -1,6 +1,6 @@
 {
     "name": "angeldm/magento2-products-delete",
-    "description": "",
+    "description": "magento 2 module to delete all products and categories",
     "type": "magento2-module",
     "license": "proprietary",
     "authors": [{
