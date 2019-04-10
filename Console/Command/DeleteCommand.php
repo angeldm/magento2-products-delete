@@ -65,7 +65,9 @@ class DeleteCommand extends Command
     	$categoryFactory = $this->_objectManager->get('Magento\Catalog\Model\CategoryFactory');
 	$newCategory = $categoryFactory->create();
 	$collection = $newCategory->getCollection();
-	$this->_registry->register("isSecureArea", true);
+	//$this->_registry->register("isSecureArea", true);
+	$app_state = $this->_objectManager->get('Magento\Framework\App\State');
+    	$app_state->setAreaCode('frontend');
 	foreach($collection as $category) {
 	        if($category->getId() > 2)
          $category->delete();
@@ -73,11 +75,17 @@ class DeleteCommand extends Command
     }
 
     private function deleteAllProducts(){
-	$collection = $this->_productCollectionFactory->create();
-	$collection->addAttributeToSelect('*');
-	$collection->load();
+///	$collection = $this->_productCollectionFactory->create();
+//	$collection->addAttributeToSelect('*');
+//	$collection->load();
  
-	$this->_registry->register("isSecureArea", true);
+	    //	$this->_registry->register("isSecureArea", true);
+	$this->_objectManager->get('Magento\Framework\Registry')->register('isSecureArea', true);
+       // $productCollection = $this->_objectManager->create('Magento\Catalog\Model\\Product\CollectionFactory');
+        $collection = $this->_productCollectionFactory->create()->addAttributeToSelect('*')->load();
+        $app_state = $this->_objectManager->get('Magento\Framework\App\State');
+        $app_state->setAreaCode('frontend');
+
 	foreach ($collection as $product){
         	 $this->_productRepository->deleteById($product->getSku());   
 	}    
