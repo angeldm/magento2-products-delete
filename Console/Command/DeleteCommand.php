@@ -87,6 +87,7 @@ class DeleteCommand extends Command
         $app_state->setAreaCode('frontend');
 
 	foreach ($collection as $product){
+		echo $product->getSku()."\n";
         	 $this->_productRepository->deleteById($product->getSku());   
 	}    
 	
