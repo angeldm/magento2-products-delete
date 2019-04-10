@@ -33,7 +33,7 @@ class DeleteCommand extends Command
         $this->_productRepository = $productRepository;
         $this->_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $this->_productCollectionFactory = $productCollectionFactory;
-        $this->_objectManager->get(Magento\Framework\Registry::class)->register('isSecureArea', true);
+        $this->_objectManager->get(\Magento\Framework\Registry::class)->register('isSecureArea', true);
         parent::__construct();
     }
     /**
@@ -69,7 +69,7 @@ class DeleteCommand extends Command
 
     private function deleteAllCategories(OutputInterface $output)
     {
-        $categoryFactory = $this->_objectManager->get(Magento\Catalog\Model\CategoryFactory::class);
+        $categoryFactory = $this->_objectManager->get(\Magento\Catalog\Model\CategoryFactory::class);
         $newCategory = $categoryFactory->create();
         $collection = $newCategory->getCollection();
         $i=0;
@@ -88,7 +88,7 @@ class DeleteCommand extends Command
     private function deleteAllProducts(OutputInterface $output)
     {
         $collection = $this->_productCollectionFactory->create()->addAttributeToSelect('*')->load();
-        $app_state = $this->_objectManager->get(Magento\Framework\App\State::class);
+        $app_state = $this->_objectManager->get(\Magento\Framework\App\State::class);
         $app_state->setAreaCode('frontend');
         $i=0;
         foreach ($collection as $product) {
