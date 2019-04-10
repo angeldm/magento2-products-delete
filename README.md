@@ -8,7 +8,7 @@ composer require angeldm/magento2-products-delete
 
 ## Usage
 
-``
+```
 magento catalog:product:delete [options]
 
 Options:
