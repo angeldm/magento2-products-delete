@@ -66,8 +66,8 @@ class DeleteCommand extends Command
 	$newCategory = $categoryFactory->create();
 	$collection = $newCategory->getCollection();
 	//$this->_registry->register("isSecureArea", true);
-	$app_state = $this->_objectManager->get('Magento\Framework\App\State');
-    	$app_state->setAreaCode('frontend');
+//	$app_state = $this->_objectManager->get('Magento\Framework\App\State');
+ //   	$app_state->setAreaCode('frontend');
 	foreach($collection as $category) {
 	        if($category->getId() > 2)
          $category->delete();
