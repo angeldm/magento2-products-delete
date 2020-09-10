@@ -59,7 +59,7 @@ class DeleteCommand extends Command
      */
     protected function configure()
     {
-        $this->setName(" catalog:product:delete");
+        $this->setName("catalog:product:delete");
         $this->setDescription("delete");
         $this->setDefinition([
             new InputOption(self::NAME_OPTION, "-c", InputOption::VALUE_NONE, "Delete categories")
