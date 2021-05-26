@@ -99,5 +99,22 @@ class DeleteCommand extends Command
             $i++;
         }
         return $i;
+//        $this->_objectManager->get('Magento\Framework\Registry')->register('isSecureArea', true);
+//        $productCollection = $this->_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+//        $collection = $productCollection->create()->addAttributeToSelect('*')->load();
+//        $app_state = $this->_objectManager->get('\Magento\Framework\App\State');
+//        $app_state->setAreaCode('frontend');
+//
+//        foreach ($collection as $product){
+//            try {
+//                echo 'Deleted : '.$product->getName()."<br>";
+//                $product->delete();
+//
+//            } catch (Exception $e) {
+//                echo 'Unable to delete product : '.$product->getName()."<br>";
+//                echo $e->getMessage()."<br>";
+//            }
+//        }
+
     }
 }
